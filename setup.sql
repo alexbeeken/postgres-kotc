@@ -181,7 +181,7 @@ BEGIN
   p1_id = NEW.player1_id;
   p2_id = NEW.player2_id;
 
-  NEW.draw_idx = 0;
+  NEW.draw_idx = 1;
 
   NEW.n := NEW.deck[NEW.draw_idx];
   NEW.draw_idx = NEW.draw_idx + 1;
@@ -221,7 +221,7 @@ BEGIN
 
   UPDATE kotc.players SET hand = hand1 WHERE id = p1_id;
   UPDATE kotc.players SET hand = hand2 WHERE id = p2_id;
-  NEW.draw_idx := 0;
+  NEW.draw_idx := 1;
 
   RETURN NEW;
 END;
